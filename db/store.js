@@ -10,7 +10,7 @@ const writeFileAsync = util.promisify(fs.writeFile);
 // Need to save and read notes
 class Store {
     read() {
-        return readFileAsync('db/db.json', 'utf-8');
+        return readFileAsync('db/db.json', 'utf8');
     }
     
     // Need to beable to write a note to be stored in the json file
@@ -34,7 +34,7 @@ class Store {
     }
 
     // Let user add notes, cannot be left blank
-    addNotes(note) {
+    addNote(note) {
         
         const { title, text } = note;
         if(!title || !text) {
@@ -45,6 +45,11 @@ class Store {
         return this.getNotes().then((notes) => [... notes, newNote])
         .then((updatedNotes) => this.write(updatedNotes))
         .then(() => newNote)
+    }
+
+    removeNote(id) {
+        return this.getNotes().then((notes) => notes.filter((note) => note.id !== id))
+        .then((filteredNotes) => this.write(filteredNotes));
     }
 }
 
