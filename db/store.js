@@ -34,9 +34,9 @@ class Store {
     }
 
     // Let user add notes, cannot be left blank
-    addNotes() {
+    addNotes(note) {
         
-        const { title, text } = notes;
+        const { title, text } = note;
         if(!title || !text) {
             throw new Error('Please enter a title and text!')
         }
