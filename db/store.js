@@ -40,13 +40,14 @@ class Store {
         if(!title || !text) {
             throw new Error('Please enter a title and text!')
         }
-        
+        // Note will have 3 properties:
         const newNote = { title, text, id: uuidv1()};
         return this.getNotes().then((notes) => [... notes, newNote])
         .then((updatedNotes) => this.write(updatedNotes))
         .then(() => newNote)
     }
 
+    // Get the note ready for deletion
     removeNote(id) {
         return this.getNotes().then((notes) => notes.filter((note) => note.id !== id))
         .then((filteredNotes) => this.write(filteredNotes));
