@@ -7,15 +7,21 @@ With every project, I re-learn the importance of paying attention to EVERY. SING
 ## Table of Contents
 
 -[Installation](#installation)
+
 -[Usage](#usage)
+
 -[Resources](#resources)
+
 -[License](#license)
+
 -[Deploy](#deploy-application)
+
 -[Screenshots](#screenshots)
 
 ## Installation
 
 npm i express
+
 npm i uuid@3.4.0
 
 ## Usage
