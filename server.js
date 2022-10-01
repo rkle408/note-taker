@@ -6,9 +6,10 @@ const app = express();
 const htmlRoute = require('./routes/htmlRoute');
 const apiRoute = require('./routes/apiRoute');
 
+app.use(express.static('public'));
+// Need middleware that will understand JSON
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(express.static('public'));
 
 // Need to create API routes to get and post notes
 app.use('/api', apiRoute);

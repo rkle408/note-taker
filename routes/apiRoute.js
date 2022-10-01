@@ -1,4 +1,4 @@
-// Need to have parentheses after Router, otherwise the whole thing breaks
+// Need to have parentheses after Router, otherwise the whole thing breaks.
 const router = require('express').Router();
 const store = require('../db/store');
 
